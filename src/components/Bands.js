@@ -7,7 +7,7 @@ class Bands extends Component {
             
             <div>
                 
-                {this.props.bands.map((band) => <Band band={band} id={band.id} delete={this.props.delete}/>)}
+                {this.props.bands.map((band) => <Band band={band} id={band.id} dispatch={this.props.dispatch}/>)}
             </div>
         )
     }

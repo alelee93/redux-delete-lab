@@ -9,7 +9,7 @@ class BandsContainer extends Component {
     return (
       <div>
         <BandInput addBand={this.props.addBand}/>
-        <Bands bands={this.props.bands} delete={this.props.delete}/>
+        <Bands bands={this.props.bands} dispatch={this.props.delete}/>
       </div>
     )
   }
@@ -19,7 +19,7 @@ const mapStateToProps = ({ bands }) => ({ bands })
 
 const mapDispatchToProps = dispatch => ({
   addBand: name => dispatch({ type: "ADD_BAND", name }),
-  delete: id => dispatch({type: 'DELETE_BAND', payload: id})
+  delete: id => dispatch({type: 'DELETE_BAND',  payload: id})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BandsContainer)
